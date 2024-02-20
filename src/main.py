@@ -91,9 +91,3 @@ class MainApp(tk.CTk):
 if __name__ == '__main__':
         app = MainApp()
         app.mainloop()
-
-"""
-1) Сделать анимацию основных кнопок +
-2) Заполнить CHANGELOG +
-3) Залить на GitHub
-"""
