@@ -8,7 +8,7 @@ Runance is an app for your finances. Our taglines are:
 ```
     In development...
 ```
-
+---
 ## Required dependencies
 ```
     colorama==0.4.6
