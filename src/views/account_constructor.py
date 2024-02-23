@@ -4,7 +4,7 @@ import customtkinter as tk
 # bg-color #3F3A46
 
 import views.settings.config as config
-import views.account_functions.signup_page as signupLoad
+import views.account_functions.sign_page as signLoad
 import views.account_functions.accountIsTrue as accountIsTrue
 
 class Content(tk.CTkFrame):
@@ -20,7 +20,7 @@ class Content(tk.CTkFrame):
         if config.dct['user_activated'] is True:
             pass
         elif config.dct['user_activated'] is False:
-            contentx = signupLoad.ContentAccount(self, 330, 470)
+            contentx = signLoad.ContentSignIn(self, 330, 470)
             contentx.place(x=10, y=10)
         else:
             print('Syntax error (src/views/settings/config.py {line 8})')

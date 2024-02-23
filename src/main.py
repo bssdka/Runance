@@ -62,8 +62,8 @@ class MainApp(tk.CTk):
         self.settings_btn.place(x=265, y=500) 
 
         # ! Инициализируем главную страницу
-        content = viewHome.Content(self, width=330, height=470)
-        # content = viewAccount.Content(self, width=330, height=470)
+        # content = viewHome.Content(self, width=330, height=470)
+        content = viewAccount.Content(self, width=330, height=470)
         content.place(x=10, y=10)
 
         # ! Привязываем кнопки к анимации
