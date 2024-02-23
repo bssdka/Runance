@@ -26,5 +26,6 @@
 		- Добавлен каталог settings_pages
 	w1.02.5A SenyDeveloper ~ 1.30
 		- Переработана система создания экземпляров классов
-		- Создан недостающий файл в /views/account_pages
-		- Создан недостающий файл в /views/settings_pages
+		- Создан недостающий файл в /views/account_pages (accountTrue.py)
+		- Создан недостающий файл в /views/settings_pages (settingsTrue.py)
+		- Сконструирована страница settingsFalse.py
