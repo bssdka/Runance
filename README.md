@@ -9,7 +9,6 @@ Runance is a python application for monitoring your financial spending and incom
 ```
 ---
 ---
----
 ## Installation
 ```
     In development...
