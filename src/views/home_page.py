@@ -3,6 +3,7 @@
 import customtkinter as tk
 from PIL import Image
 import webbrowser
+import time
 import os
 # bg-color #3F3A46
 
@@ -19,6 +20,9 @@ class Content(tk.CTkFrame):
         self.entertainmentsImg = tk.CTkImage(light_image=Image.open(os.path.join(self.directory, "assets", "images", "entertainments.png")), size=(30, 30))
         self.miscellaneousImg = tk.CTkImage(light_image=Image.open(os.path.join(self.directory, "assets", "images", "miscellaneous.png")), size=(30, 30))
         self.githubImg = tk.CTkImage(light_image=Image.open(os.path.join(self.directory, "assets", "images", "github.png")), size=(30, 30))
+        
+        # ! Selection of random images for labels
+        self.notfoundImg = tk.CTkImage(light_image=Image.open(os.path.join(self.directory, "assets", "images", "current_news", "not_found.png")), size=(100, 100))
         
         self.initUI(master, width, height)
     
@@ -39,11 +43,14 @@ class Content(tk.CTkFrame):
         self.miscellaneous_btn = tk.CTkButton(self, text="", width=50, height=50, corner_radius=10, border_color='white', fg_color="#8E48F0", hover_color="#9364f2", image=self.miscellaneousImg, border_width=2).place(x=205, y=130)
         self.githubLink_btn = tk.CTkButton(self, text="", width=50, height=50, corner_radius=10, border_color='white', fg_color="#8E48F0", hover_color="#9364f2", image=self.githubImg, border_width=2, command=lambda: webbrowser.open("https://github.com/bssdka")).place(x=270, y=130)
         
-        
+        tk.CTkLabel(self, text="Interesting...", font=("Verdana", 15, "bold")).place(x=15, y=200)
+        news1 = tk.CTkButton(self, width=150, height=150, text="", image=self.notfoundImg, corner_radius=20, border_color="white", border_width=2).place(x=10, y=240)
+        news2 = tk.CTkButton(self, width=150, height=150, text="", image=self.notfoundImg, corner_radius=20, border_color="white", border_width=2).place(x=170, y=240)
         
         # !Применяем одинаковые конфиги ко всем виджетам
         for widget in self.winfo_children():
             widget.configure(bg_color="#3F3A46")
+            
             
     def runSearch(self):
         print("successfully")

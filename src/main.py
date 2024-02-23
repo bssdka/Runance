@@ -16,7 +16,7 @@ import views.settings_page as viewSettings
 import views.settings.config as config  # noqa: F401
 
 # Global variables
-VERSION = "Runance w1.02.1A"
+VERSION = "Runance w1.02.2A"
 
 class MainApp(tk.CTk):
     def __init__(self):
@@ -38,7 +38,7 @@ class MainApp(tk.CTk):
         
     def initUI(self):
         self.title(VERSION)
-        self.geometry("350x550+150+150")
+        self.geometry("350x550")
         self.resizable(False, False)
         
         # <---------Down Menu------------>
@@ -61,11 +61,11 @@ class MainApp(tk.CTk):
         self.settings_btn.place(x=265, y=500) 
 
         # ! Инициализируем главную страницу
-        # content = viewHome.Content(self, width=330, height=470)
-        content = viewAccount.Content(self, width=330, height=470)
+        content = viewHome.Content(self, width=330, height=470)
+        # content = viewAccount.Content(self, width=330, height=470)
         content.place(x=10, y=10)
 
-        # Привязываем кнопки к анимации
+        # ! Привязываем кнопки к анимации
         self.home_btn.bind('<Enter>', lambda x: (self.animateOn(self.home_btn), self.home_btn.place(x=7.5, y=497.5)))
         self.home_btn.bind('<Leave>', lambda x: (self.animateOff(self.home_btn), self.home_btn.place(x=10, y=500)))
         self.finance_btn.bind('<Enter>', lambda x: (self.animateOn(self.finance_btn), self.finance_btn.place(x=92.5, y=497.5)))
