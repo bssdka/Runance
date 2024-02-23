@@ -11,7 +11,7 @@ import os
 import views.home_page as viewHome
 import views.finance_page as viewFinance
 import views.account_constructor as viewAccount
-import views.settings_page as viewSettings
+import views.settings_constructor as viewSettings
 
 import views.settings.config as config
 
@@ -54,17 +54,17 @@ class MainApp(tk.CTk):
         self.finance_btn.place(x=95, y=500)
 
         self.account_btn = tk.CTkButton(down_frame, width=75, height=40, text="Account", bg_color="#3F3A46", fg_color="#8E48F0", hover_color="#6C489E",
-                                    command=lambda:viewAccount.Content(self, width=330, height=470).place(x=10, y=10))
+                                    command=lambda:viewAccount.Content(self, width=330, height=470))
         self.account_btn.place(x=180, y=500)
         
         self.settings_btn = tk.CTkButton(down_frame, width=75, height=40, text="Settings", bg_color="#3F3A46", fg_color="#8E48F0", hover_color="#6C489E",
-                                    command=lambda:viewSettings.Content(self, width=330, height=470).place(x=10, y=10))
+                                    command=lambda:viewSettings.Content(self, width=330, height=470))
         self.settings_btn.place(x=265, y=500) 
 
         # ! Инициализируем главную страницу
         # content = viewHome.Content(self, width=330, height=470)
-        content = viewAccount.Content(self, width=330, height=470)
-        content.place(x=10, y=10)
+        # content = viewAccount.Content(self, width=330, height=470)
+        content = viewSettings.Content(self, width=330, height=470)
 
         # ! Привязываем кнопки к анимации
         self.home_btn.bind('<Enter>', lambda x: (self.animateOn(self.home_btn), self.home_btn.place(x=7.5, y=497.5)))

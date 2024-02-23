@@ -7,7 +7,7 @@ path = os.path.join(directory, "assets", "account_image.png")
 
 dct = {
     
-    "VERSION": 'Runance w1.02.04A',
+    "VERSION": 'Runance w1.02.05A',
     "profile_image": path,
     
     "admin": {
