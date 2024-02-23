@@ -9,6 +9,7 @@ dct = {
     
     "VERSION": 'Runance w1.02.05A',
     "profile_image": path,
+    "accountisregistered": True,
     
     "admin": {
         "id": '1',
