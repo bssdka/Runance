@@ -8,3 +8,4 @@ src/views/settings/__pycache__/__init__.cpython-312.pyc
 src/views/settings/__pycache__/config.cpython-312.pyc
 src/views/account_functions/__pycache__/sign_page.cpython-312.pyc
 src/views/account_functions/__pycache__/signin_page.cpython-312.pyc
+src/views/account_pages/__pycache__/sign_page.cpython-312.pyc

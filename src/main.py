@@ -39,7 +39,7 @@ class MainApp(tk.CTk):
         
     def initUI(self):
         self.title(VERSION)
-        self.geometry("350x550")
+        self.geometry("350x550-400-0")
         self.resizable(False, False)
         
         # <---------Down Menu------------>
