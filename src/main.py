@@ -2,7 +2,6 @@
 
 # Importing requirements
 import customtkinter as tk
-from PIL import Image
 import ctypes
 import sys
 import os
@@ -14,10 +13,10 @@ import views.finance_page as viewFinance
 import views.account_constructor as viewAccount
 import views.settings_page as viewSettings
 
-import views.settings.config as config  # noqa: F401
+import views.settings.config as config
 
 # Global variables
-VERSION = "Runance w1.02.3A"
+VERSION = config.dct['VERSION']
 
 class MainApp(tk.CTk):
     def __init__(self):
@@ -35,8 +34,6 @@ class MainApp(tk.CTk):
         except Exception:
             pass 
         
-        # !Initializing images
-        self.chatImg = tk.CTkImage(light_image=Image.open(os.path.join(self.directory, "assets", "images", "chat.png")), size=(30, 30))
         
         self.initUI()
         
@@ -63,8 +60,6 @@ class MainApp(tk.CTk):
         self.settings_btn = tk.CTkButton(down_frame, width=75, height=40, text="Settings", bg_color="#3F3A46", fg_color="#8E48F0", hover_color="#6C489E",
                                     command=lambda:viewSettings.Content(self, width=330, height=470).place(x=10, y=10))
         self.settings_btn.place(x=265, y=500) 
-        
-        self.chat_btn = tk.CTkButton(self, text="", image=self.chatImg, width=50, height=50, corner_radius=10, border_color='white', fg_color="#8E48F0", hover_color="#9364f2", border_width=2).place(x=280, y=300)
 
         # ! Инициализируем главную страницу
         content = viewHome.Content(self, width=330, height=470)
