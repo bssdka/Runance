@@ -44,8 +44,8 @@ class Content(tk.CTkFrame):
         self.githubLink_btn = tk.CTkButton(self, text="", width=50, height=50, corner_radius=10, border_color='white', fg_color="#8E48F0", hover_color="#9364f2", image=self.githubImg, border_width=2, command=lambda: webbrowser.open("https://github.com/bssdka")).place(x=270, y=130)
         
         tk.CTkLabel(self, text="Interesting...", font=("Verdana", 15, "bold")).place(x=15, y=200)
-        news1 = tk.CTkButton(self, width=150, height=150, text="", image=self.notfoundImg, corner_radius=20, border_color="white", border_width=2).place(x=10, y=240)
-        news2 = tk.CTkButton(self, width=150, height=150, text="", image=self.notfoundImg, corner_radius=20, border_color="white", border_width=2).place(x=170, y=240)
+        news1 = tk.CTkButton(self, width=150, height=150, text="", image=self.notfoundImg, corner_radius=20, border_color="white", border_width=2, fg_color="#8E48F0", hover_color="#9364f2").place(x=10, y=240)
+        news2 = tk.CTkButton(self, width=150, height=150, text="", image=self.notfoundImg, corner_radius=20, border_color="white", border_width=2, fg_color="#8E48F0", hover_color="#9364f2").place(x=170, y=240)
         
         # !Применяем одинаковые конфиги ко всем виджетам
         for widget in self.winfo_children():

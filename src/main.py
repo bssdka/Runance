@@ -2,6 +2,7 @@
 
 # Importing requirements
 import customtkinter as tk
+from PIL import Image
 import ctypes
 import sys
 import os
@@ -16,14 +17,14 @@ import views.settings_page as viewSettings
 import views.settings.config as config  # noqa: F401
 
 # Global variables
-VERSION = "Runance w1.02.2A"
+VERSION = "Runance w1.02.3A"
 
 class MainApp(tk.CTk):
     def __init__(self):
         super().__init__()
         
         try:
-            # $Set Windows titlebar icon$
+            # $Set Windows titlebar icon$6
             if sys.platform.startswith('win'):
                 self.directory = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
                 self.after(200, lambda: self.iconbitmap(os.path.join(self.directory, "src", "assets", "icon", "logo.ico")))
@@ -33,6 +34,9 @@ class MainApp(tk.CTk):
                 ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
         except Exception:
             pass 
+        
+        # !Initializing images
+        self.chatImg = tk.CTkImage(light_image=Image.open(os.path.join(self.directory, "assets", "images", "chat.png")), size=(30, 30))
         
         self.initUI()
         
@@ -59,6 +63,8 @@ class MainApp(tk.CTk):
         self.settings_btn = tk.CTkButton(down_frame, width=75, height=40, text="Settings", bg_color="#3F3A46", fg_color="#8E48F0", hover_color="#6C489E",
                                     command=lambda:viewSettings.Content(self, width=330, height=470).place(x=10, y=10))
         self.settings_btn.place(x=265, y=500) 
+        
+        self.chat_btn = tk.CTkButton(self, text="", image=self.chatImg, width=50, height=50, corner_radius=10, border_color='white', fg_color="#8E48F0", hover_color="#9364f2", border_width=2).place(x=280, y=300)
 
         # ! Инициализируем главную страницу
         content = viewHome.Content(self, width=330, height=470)
@@ -74,6 +80,7 @@ class MainApp(tk.CTk):
         self.account_btn.bind('<Leave>', lambda x: (self.animateOff(self.account_btn), self.account_btn.place(x=180, y=500)))
         self.settings_btn.bind('<Enter>', lambda x: (self.animateOn(self.settings_btn), self.settings_btn.place(x=262.5, y=497.5)))
         self.settings_btn.bind('<Leave>', lambda x: (self.animateOff(self.settings_btn), self.settings_btn.place(x=265, y=500)))
+        
 
         # # Импорт colorama для отладки
         import colorama as cm
