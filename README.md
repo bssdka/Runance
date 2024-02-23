@@ -29,6 +29,7 @@ Runance is a python application for monitoring your financial spending and incom
 ---
 ## Adding an account for -alpha testing
 ```
-    Submit your request in the issues section and follow the following instructions for writing your request
+    Submit your request in the issues section and follow the following 
+    instructions for writing your request
 ```
 ---
