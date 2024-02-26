@@ -29,3 +29,5 @@
 		- Создан недостающий файл в /views/account_pages (accountTrue.py)
 		- Создан недостающий файл в /views/settings_pages (settingsTrue.py)
 		- Сконструирована страница settingsFalse.py
+	w1.02.6A SenyDeveloper ~
+		- Создана страница настроек settingsTrue.py
